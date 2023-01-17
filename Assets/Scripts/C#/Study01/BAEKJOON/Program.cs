@@ -12,7 +12,8 @@ namespace BAEKJOON
         {
             Program program = new Program();
             //program.Lv1_Test();
-            program.Lv2_Test();
+            //program.Lv2_Test();
+            program.Lv3_Test();
         }
 
         
@@ -46,6 +47,24 @@ namespace BAEKJOON
             //  level2.Q2884();     // OK
             //  level2.Q2525();     // OK
             //  level2.Q2480();     // OK
+        }
+
+        public void Lv3_Test()
+        {
+            Level3 level3 = new Level3();
+            //  level3.Q2739();     // OK
+            //  level3.Q10950();    // OK
+            //  level3.Q8393();     // OK
+            //  level3.Q25304();    // OK
+            //  level3.Q15552();    // OK
+            //  level3.Q11021();    // OK
+            //  level3.Q11022();    // OK
+            //  level3.Q2438();     // OK
+            //  level3.Q2439();     // OK
+            //  level3.Q10952();    // OK
+            //  level3.Q10951();    // OK
+            level3.Q1110();     // OK
+
         }
     }
 }
