@@ -13,10 +13,11 @@ namespace BAEKJOON
             Program program = new Program();
             //program.Lv1_Test();
             //program.Lv2_Test();
-            program.Lv3_Test();
+            //program.Lv3_Test();
+            program.Lv4_Test();
         }
 
-        
+
         public void Lv1_Test()
         {
             Level1 level1 = new Level1();
@@ -63,7 +64,21 @@ namespace BAEKJOON
             //  level3.Q2439();     // OK
             //  level3.Q10952();    // OK
             //  level3.Q10951();    // OK
-            level3.Q1110();     // OK
+            //  level3.Q1110();     // OK
+
+        }
+        public void Lv4_Test()
+        {
+            Level4 level4 = new Level4();
+            //  level4.Q10807();    //OK
+            //  level4.Q10871();    //OK
+            //  level4.Q10818();    //OK
+            //  level4.Q2562();     //OK
+            //  level4.Q5597();     //OK
+            //  level4.Q3052();     //OK
+            //  level4.Q1546();     //OK
+            //  level4.Q8958();     //OK
+            level4.Q4344();
 
         }
     }

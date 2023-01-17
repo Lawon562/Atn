@@ -4,6 +4,10 @@ using System.Text;
 
 namespace BAEKJOON
 {
+    /*
+     * Level 3 : 반복문
+     * for, while 등의 반복문을 사용해 봅시다.
+     */
     class Level3
     {
         /*

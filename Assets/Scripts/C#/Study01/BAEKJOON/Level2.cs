@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace BAEKJOON
 {
+    /*
+     * Level2 : 조건문
+     * if 등의 조건문을 사용해 봅시다.
+     */
     class Level2
     {
         /*
