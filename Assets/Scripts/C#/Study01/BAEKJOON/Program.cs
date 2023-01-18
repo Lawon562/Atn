@@ -15,7 +15,8 @@ namespace BAEKJOON
             //program.Lv2_Test();
             //program.Lv3_Test();
             //program.Lv4_Test();
-            program.Lv5_Test();
+            //program.Lv5_Test();
+            program.Lv6_Test();
         }
 
 
@@ -87,7 +88,22 @@ namespace BAEKJOON
             Level5 level5 = new Level5();
             //  level5.Q15596();    //OK
             //  level5.Q4673();     //OK
-            level5.Q1065();
+            //  level5.Q1065();     //OK
+        }
+
+        public void Lv6_Test()
+        {
+            Level6 level6 = new Level6();
+            //  level6.Q11654();    //OK
+            //  level6.Q11720();    //OK
+            //  level6.Q10809();    //OK
+            //  level6.Q2675();     //OK
+            //  level6.Q1157();     //OK
+            //  level6.Q1152();     //OK
+            //  level6.Q2908();     //OK
+            //  level6.Q5622();     //OK
+            //  level6.Q2941();     //OK
+            level6.Q1316();
         }
     }
 }
