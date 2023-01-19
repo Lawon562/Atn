@@ -8,6 +8,8 @@ namespace TextRPG
 {
     class Key
     {
+        public static bool game = true;
+
         public static int windowSizeX = 80;
         public static int windowSizeY = 20;
 

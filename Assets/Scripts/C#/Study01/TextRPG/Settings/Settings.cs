@@ -23,7 +23,7 @@ namespace TextRPG
             Console.SetWindowSize(Key.windowSizeX, Key.windowSizeY);    // Set Window Size
             Console.SetWindowPosition(0, 0);                            // Set Window Position
             Console.Title = "Text RPG";                                 // Set Console Title
-            TextColor.Fore_Black();                                         // Set Default Text Color
+            TextColor.ForeBlack();                                         // Set Default Text Color
         }
     }
 }

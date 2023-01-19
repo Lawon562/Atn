@@ -43,7 +43,7 @@ namespace TextRPG
          *-------------------------------------------------------*/
         static void WriteVersionDate()
         {
-            TextColor.Fore_DarkGray();
+            TextColor.ForeDarkGray();
             Console.SetCursorPosition(Key.windowSizeX - Key.devDate.Length - 1, Key.windowSizeY - 1);
             Console.Write(Key.devDate);
             Common.TextClearing();
@@ -61,7 +61,7 @@ namespace TextRPG
          *-------------------------------------------------------*/
         static void WriteGameTitle()
         {
-            TextColor.Fore_Yellow();
+            TextColor.ForeYellow();
 
             int x = Key.titleX;
             int y = Key.titleY;
@@ -130,7 +130,7 @@ namespace TextRPG
                     y += 2;
                 }
             } while (select.Key != ConsoleKey.Enter);
-            TextColor.Fore_White();
+            TextColor.ForeWhite();
             return (y - Key.menuY) / 2 + 1;
         }
 
@@ -145,7 +145,7 @@ namespace TextRPG
          *-------------------------------------------------------*/
         public static void WriteSelectUI(int x, int y, int n)
         {
-            TextColor.Fore_White();
+            TextColor.ForeWhite();
 
             Console.SetCursorPosition(x, y);
             Console.Write("  ");

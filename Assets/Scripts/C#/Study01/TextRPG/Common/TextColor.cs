@@ -26,7 +26,7 @@ namespace TextRPG
          * Method : Back_White_Fore_Black
          * 설명 : 글자색-검정색, 배경색-하얀색
          *--------------------------------------------*/
-        public static void Back_White_Fore_Black()
+        public static void BackWhiteForeBlack()
         {
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
@@ -36,7 +36,7 @@ namespace TextRPG
          * Method : Fore_DarkGray
          * 설명 : 글자색-어두운 회색
          *--------------------------------------------*/
-        public static void Fore_DarkGray()
+        public static void ForeDarkGray()
         {
             Console.ForegroundColor = ConsoleColor.DarkGray;
         }
@@ -45,7 +45,7 @@ namespace TextRPG
          * Method : Fore_Yellow
          * 설명 : 글자색-노란색
          *--------------------------------------------*/
-        public static void Fore_Yellow()
+        public static void ForeYellow()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
         }
@@ -54,7 +54,7 @@ namespace TextRPG
          * Method : Fore_Black
          * 설명 : 글자색-검정색
          *--------------------------------------------*/
-        public static void Fore_Black()
+        public static void ForeBlack()
         {
             Console.ForegroundColor = ConsoleColor.Black;
         }
@@ -63,9 +63,17 @@ namespace TextRPG
          * Method : Fore_White
          * 설명 : 글자색-하얀색
          *--------------------------------------------*/
-        public static void Fore_White()
+        public static void ForeWhite()
         {
             Console.ForegroundColor = ConsoleColor.White;
         }
+
+
+        public static void SetAnimationColorBlack(ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+        }
+
+
     }
 }
