@@ -14,10 +14,20 @@ namespace TextRPG
 {
     class Program
     { 
+        static void Exit()
+        {
+            TextColor.Fore_White();
+            Console.Write("게임을 종료하시겠습니까?(yes를 입력하시면 게임이 종료됩니다) : ");
+            if (Console.ReadLine().Equals("yes")) return;
+            TextColor.ResetColor();
+        }
+
         static void Main(string[] args)
         {
             Settings.Set();
-            int select = TitleScene.Play();
+            //int select = TitleScene.Play();
+
+            
 
         }
     }
