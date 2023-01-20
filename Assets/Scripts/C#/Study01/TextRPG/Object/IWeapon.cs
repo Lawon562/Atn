@@ -8,8 +8,9 @@ namespace TextRPG.Object
 {
     interface IWeapon
     {
-        int apMin { get; set; }
-        int apMax { get; set; }
+        string Name { get; set; }
+        int ApMin { get; set; }
+        int ApMax { get; set; }
         
     }
 }
