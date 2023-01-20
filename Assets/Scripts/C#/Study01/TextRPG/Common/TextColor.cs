@@ -68,7 +68,41 @@ namespace TextRPG
             Console.ForegroundColor = ConsoleColor.White;
         }
 
+        /*--------------------------------------------*
+         * Method : Fore_Cyan
+         * 설명 : 글자색-시안색
+         *--------------------------------------------*/
+        public static void ForeCyan()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+        }
 
+        /*--------------------------------------------*
+         * Method : BgCyan
+         * 설명 : 글자색-시안색
+         *--------------------------------------------*/
+        public static void BgCyan()
+        {
+            Console.BackgroundColor = ConsoleColor.Cyan;
+        }
+
+        /*--------------------------------------------*
+         * Method : BgCyan
+         * 설명 : 글자색-시안색
+         *--------------------------------------------*/
+        public static void BgBlack()
+        {
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
+
+        /*--------------------------------------------*
+         * Method : BgCyan
+         * 설명 : 글자색-시안색
+         *--------------------------------------------*/
+        public static void BgDarkGray()
+        {
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+        }
         public static void SetAnimationColorBlack(ConsoleColor color)
         {
             Console.ForegroundColor = color;
