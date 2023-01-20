@@ -8,6 +8,8 @@ namespace TextRPG.Character
 {
     abstract class Character : ICharacter
     {
+        private string name;
+        private int combatPower = 0;
         private int maxLife     = 1;
         private int maxMana     = 1;
         private int maxStamina  = 1;
@@ -21,6 +23,17 @@ namespace TextRPG.Character
         private int luck        = 1;
         private int defPoint    = 1;
         private int defPercent  = 1;
+
+        public string Name
+        {
+            get => this.name;
+            set { this.name = value; }
+        }
+        public int CombatPower
+        {
+            get => this.combatPower;
+            set { this.combatPower = value; }
+        }
 
         public int MaxLife
         {
