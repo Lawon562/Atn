@@ -22,6 +22,23 @@ namespace TextRPG
             "\\/    \\/ \\__,_||_.__/ |_||_| |_| \\___/  \\__, ||_|",
             "                                        |___/    "
         };
+        public static ConsoleColor[] color = {
+            ConsoleColor.Black,
+            ConsoleColor.DarkGray,
+            ConsoleColor.Gray,
+            ConsoleColor.White,
+        };
+        public static string[] introStr = {
+            "들리나요?",
+            "아...",
+            "제 말이 들리고 있군요..",
+            "힘든 부탁이지만..",
+            "이쪽 세상으로 와주세요.",
+            "티르 나 노이가...",
+            "파괴되려 합니다...",
+            ""
+        };
+
 
         public static int titleX = windowSizeX / 2 - gameTitle.Max().Length / 2 - 1;
         public static int titleY = 3;
