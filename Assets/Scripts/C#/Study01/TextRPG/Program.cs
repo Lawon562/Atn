@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using TextRPG.Scenes;
+using TextRPG.Character;
+using TextRPG.Object;
 /*
 * 프로젝트 이름 : 
 * 개발 일자 : 2023.01.19
@@ -15,10 +17,6 @@ namespace TextRPG
 {
     class Program
     {
-        
-        
-       
-
         //------------
         static void Main(string[] args)
         {
@@ -27,8 +25,6 @@ namespace TextRPG
             {
                 Common.ResetScreen();
                 int select = TitleScene.Play();
-                //int select = 4;
-
                 Console.Clear();
                 if (select == 1)
                 {
