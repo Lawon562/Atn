@@ -13,7 +13,7 @@ namespace TextRPG.Scenes
         {
             TextColor.ForeWhite();
             Thread.Sleep(1000);
-            foreach (string s in stc)
+            foreach (string s in Key.introStr)
             {
                 Console.Clear();
 
@@ -26,26 +26,9 @@ namespace TextRPG.Scenes
             TextColor.ResetColor();
         }
 
-        public static ConsoleColor[] color = {
-            ConsoleColor.Black,
-            ConsoleColor.DarkGray,
-            ConsoleColor.Gray,
-            ConsoleColor.White,
-        };
-        public static string[] stc = {
-            "들리나요?",
-            "아...",
-            "제 말이 들리고 있군요..",
-            "힘든 부탁이지만..",
-            "이쪽 세상으로 와주세요.",
-            "티르 나 노이가...",
-            "파괴되려 합니다...",
-            ""
-        };
-
         static void SayFadeStart(string s)
         {
-            for (int i = 0; i < color.Length; i++)
+            for (int i = 0; i < Key.color.Length; i++)
             {
                 WriteText(s, i);
                 Thread.Sleep(100);
@@ -54,7 +37,7 @@ namespace TextRPG.Scenes
 
         static void SayFadeEnd(string s)
         {
-            for (int i = color.Length - 1; i >= 0; i--)
+            for (int i = Key.color.Length - 1; i >= 0; i--)
             {
                 WriteText(s, i);
                 Thread.Sleep(100);
@@ -63,7 +46,7 @@ namespace TextRPG.Scenes
 
         static void WriteText(string s, int i)
         {
-            TextColor.SetAnimationColorBlack(color[i]);
+            TextColor.SetAnimationColorBlack(Key.color[i]);
             Console.SetCursorPosition(Key.windowSizeX / 2 - s.Length, Key.windowSizeY / 2);
             Console.Write(s);
         }
