@@ -8,6 +8,7 @@ namespace TextRPG
 {
     static class Common
     {
+        public static Random random = new Random();
         public static void TextClearing()
         {
             Console.SetCursorPosition(0, 0);
