@@ -10,8 +10,8 @@ namespace TextRPG
     {
         public static bool game = true;
 
-        public static int windowSizeX = 80;
-        public static int windowSizeY = 20;
+        public static int windowSizeX = 100;
+        public static int windowSizeY = 24;
 
         public static string[] menuStr = { "♤ 새로하기 ♤", "♤ 이어하기 ♤", "♤ 옵    션 ♤", "♤ 종    료 ♤" };
         public static string[] gameTitle = {
