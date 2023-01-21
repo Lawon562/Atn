@@ -103,6 +103,10 @@ namespace TextRPG
         {
             Console.BackgroundColor = ConsoleColor.DarkGray;
         }
+        public static void BgDarkCyan()
+        {
+            Console.BackgroundColor = ConsoleColor.DarkCyan;
+        }
         public static void SetAnimationColorBlack(ConsoleColor color)
         {
             Console.ForegroundColor = color;
