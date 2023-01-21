@@ -53,11 +53,9 @@ namespace TextRPG
             Settings.Set();
             while (Key.game)
             {
-                
                 Common.ResetScreen();
                 int select = TitleScene.Play();
                 Console.Clear();
-                
                 if (select == 1)
                 {
                     IntroScene.Play();
