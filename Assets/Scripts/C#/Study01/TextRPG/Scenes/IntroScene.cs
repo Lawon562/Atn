@@ -20,6 +20,8 @@ namespace TextRPG.Scenes
                 SayFadeStart(s);
                 WriteNext();
 
+                Common.ClearInputBuffer();
+
                 Console.ReadKey();
                 SayFadeEnd(s);
             }
@@ -58,6 +60,7 @@ namespace TextRPG.Scenes
             Console.SetCursorPosition(Key.windowSizeX - next.Length * 2 + 8, Key.windowSizeY - 1);
             Console.Write(next);
             Common.TextClearing();
+            TextColor.ForeBlack();
         }
 
     }

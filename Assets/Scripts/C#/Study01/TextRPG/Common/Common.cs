@@ -15,6 +15,10 @@ namespace TextRPG
             Console.Write(" ");
         }
 
+        public static void ClearInputBuffer()
+        {
+            while (Console.KeyAvailable) Console.ReadKey(false);
+        }
         public static void ResetScreen()
         {
             Console.Clear();
@@ -22,6 +26,66 @@ namespace TextRPG
             TextColor.ResetColor();
         }
 
+        public static string PlayerInput()
+        {
+            Common.ClearInputBuffer();
+            Console.CursorVisible = true;
+            string input = Console.ReadLine();
+            Console.CursorVisible = false;
+            return input;
+        }
+
+        public static void narration(string str)
+        {
+            Key.lastLine++;
+            TextColor.ForeDarkGray();
+            SceneLineFunc.WriteLine(str);
+            TextColor.ForeWhite();
+            Key.lastLine++;
+        }
+
+        public static string getBtnStr(string[] btns, bool direction = true)
+        {
+            ConsoleKey inputKey = ConsoleKey.LeftArrow;
+            int selectNumber = 0;
+            int lastLine = Key.lastLine;
+            //Key.lastLine--;
+            do
+            {
+                Common.ClearInputBuffer();
+                TextColor.BgBlack();
+                TextColor.ForeBlack();
+                if (direction)
+                {
+                    if (selectNumber > 0 && inputKey == ConsoleKey.LeftArrow) selectNumber--;
+                    else if (selectNumber < btns.Length - 1 && inputKey == ConsoleKey.RightArrow) selectNumber++;
+                }
+                else
+                {
+                    if (selectNumber > 0 && inputKey == ConsoleKey.UpArrow) selectNumber--;
+                    else if (selectNumber < btns.Length - 1 && inputKey == ConsoleKey.DownArrow) selectNumber++;
+                }
+
+                Common.TextClearing();
+                Console.Write(" ");
+                lastLine = Key.lastLine;
+                Console.SetCursorPosition(2, lastLine);
+                for (int i = 0; i < btns.Length; i++)
+                {
+                    if (selectNumber == i) TextColor.SetConsoleColor(ConsoleColor.White, ConsoleColor.Black);
+                    else TextColor.SetConsoleColor(ConsoleColor.Black, ConsoleColor.White);
+                    Console.Write($"   {btns[i]}   ");
+                    TextColor.SetConsoleColor(ConsoleColor.Black, ConsoleColor.White);
+                    Console.Write("  ");
+                    if (!direction) Console.SetCursorPosition(2, ++lastLine);
+                }
+            } while ((inputKey = Console.ReadKey().Key) != ConsoleKey.Enter);
+            Key.lastLine = lastLine;
+            Key.lastLine += 2;
+
+
+            return btns[selectNumber];
+        }
         public static void Exit()
         {
             TextColor.ForeWhite();

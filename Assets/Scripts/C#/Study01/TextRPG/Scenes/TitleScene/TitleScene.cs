@@ -117,6 +117,7 @@ namespace TextRPG
             ConsoleKeyInfo select;
             do
             {
+                Common.ClearInputBuffer();
                 x = Key.windowSizeX / 2 - Key.menuStr[0].Length / 2 - 6;
                 select = Console.ReadKey();
                 if (y > Key.menuY && (select.Key == ConsoleKey.UpArrow || select.Key == ConsoleKey.W))

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace TextRPG.Character
@@ -9,6 +10,7 @@ namespace TextRPG.Character
     abstract class Character : ICharacter
     {
         private string name;
+        private string gender;
         private int combatPower = 0;
         private int maxLife     = 1;
         private int maxMana     = 1;
@@ -28,6 +30,11 @@ namespace TextRPG.Character
         {
             get => this.name;
             set { this.name = value; }
+        }
+        public string Gender
+        {
+            get => this.gender;
+            set { this.gender = value; }
         }
         public int CombatPower
         {
@@ -100,6 +107,63 @@ namespace TextRPG.Character
             get => this.defPercent;
             set { this.defPercent = value; }
         }
+
+        public void WriteLine(string str, bool anim = true)
+        {
+            Console.SetCursorPosition(2, Key.lastLine);
+            foreach (char ch in str)
+            {
+                Console.Write(ch);
+                if (anim) Thread.Sleep(50);
+            }
+            Key.lastLine+=2;
+        }
+        public void WriteLines(string[] introStr, bool anim = true)
+        {
+            Console.SetCursorPosition(2, Key.lastLine);
+            foreach (string intro in introStr)
+            {
+                int lineCount = 0;
+                foreach (char ch in intro)
+                {
+                    lineCount += (ch != ' ') ? 2 : 1;
+                    if (lineCount > Key.mapNameUIBot.Length - 2)
+                    {
+                        lineCount = 0;
+                        Console.SetCursorPosition(2, ++Key.lastLine);
+                    }
+                    Console.Write(ch);
+                    if (anim) Thread.Sleep(50);
+                }
+                Console.SetCursorPosition(2, ++Key.lastLine);
+            }
+            Key.lastLine++;
+        }
+
+
+
+        public void Say(string script)
+        {
+            WriteCharacterName();
+            WriteLine(script, true);
+        }
+
+        public void Say(string[] script)
+        {
+            WriteCharacterName();
+            WriteLines(script);
+        }
+
+        public void WriteCharacterName()
+        {
+            Key.lastLine++;
+            TextColor.BgDarkCyan();
+            TextColor.ForeWhite();
+            WriteLine($" 《 {this.Name} 》 ", false);
+            TextColor.BgBlack();
+            TextColor.ForeWhite();
+        }
+
 
     }
 }

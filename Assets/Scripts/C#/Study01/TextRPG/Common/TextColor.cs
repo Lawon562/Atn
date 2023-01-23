@@ -22,6 +22,12 @@ namespace TextRPG
             Console.ForegroundColor = ConsoleColor.Black;
         }
 
+        public static void SetConsoleColor(ConsoleColor bg, ConsoleColor fr)
+        {
+            Console.BackgroundColor = bg;
+            Console.ForegroundColor = fr;
+        }
+
         /*--------------------------------------------*
          * Method : Back_White_Fore_Black
          * 설명 : 글자색-검정색, 배경색-하얀색

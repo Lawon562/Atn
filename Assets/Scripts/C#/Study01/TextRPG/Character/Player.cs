@@ -9,8 +9,23 @@ namespace TextRPG.Character
 {
     class Player : Character
     {
+        private static Player instance = null;
+        public static Player GetInstance()
+        {
+            if (instance == null) return new Player("당신");
+            return instance;
+        }
+
+
+        private Player(string name)
+        {
+            this.Name = name;
+        }
+
         private Weapon weapon = new Weapon("나무 몽둥이", 3, 21);
         public Weapon Weapon { get; set; }
+
+        
 
         public void Attack(Monster Target)
         {
