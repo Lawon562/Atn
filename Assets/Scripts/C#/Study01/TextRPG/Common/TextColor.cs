@@ -22,6 +22,10 @@ namespace TextRPG
             Console.ForegroundColor = ConsoleColor.Black;
         }
 
+        public static void SetBackground(ConsoleColor color)
+        {
+            Console.BackgroundColor = color;
+        }
         public static void SetConsoleColor(ConsoleColor bg, ConsoleColor fr)
         {
             Console.BackgroundColor = bg;
