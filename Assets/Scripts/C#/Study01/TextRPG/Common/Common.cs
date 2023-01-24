@@ -29,6 +29,8 @@ namespace TextRPG
         public static string PlayerInput()
         {
             Common.ClearInputBuffer();
+            TextColor.BgBlack();
+            TextColor.ForeWhite();
             Console.CursorVisible = true;
             string input = Console.ReadLine();
             Console.CursorVisible = false;
@@ -37,11 +39,13 @@ namespace TextRPG
 
         public static void narration(string str)
         {
+            Common.ClearInputBuffer();
             Key.lastLine++;
             TextColor.ForeDarkGray();
             SceneLineFunc.WriteLine(str);
             TextColor.ForeWhite();
             Key.lastLine++;
+            TextColor.ResetColor();
         }
 
         public static string getBtnStr(string[] btns, bool direction = true)
@@ -49,7 +53,7 @@ namespace TextRPG
             ConsoleKey inputKey = ConsoleKey.LeftArrow;
             int selectNumber = 0;
             int lastLine = Key.lastLine;
-            //Key.lastLine--;
+            
             do
             {
                 Common.ClearInputBuffer();
@@ -70,6 +74,8 @@ namespace TextRPG
                 Console.Write(" ");
                 lastLine = Key.lastLine;
                 Console.SetCursorPosition(2, lastLine);
+                Common.ClearInputBuffer();
+
                 for (int i = 0; i < btns.Length; i++)
                 {
                     if (selectNumber == i) TextColor.SetConsoleColor(ConsoleColor.White, ConsoleColor.Black);
@@ -79,13 +85,38 @@ namespace TextRPG
                     Console.Write("  ");
                     if (!direction) Console.SetCursorPosition(2, ++lastLine);
                 }
+                TextColor.ResetColor();
             } while ((inputKey = Console.ReadKey().Key) != ConsoleKey.Enter);
             Key.lastLine = lastLine;
             Key.lastLine += 2;
 
+            
 
             return btns[selectNumber];
         }
+
+
+        public static void WriteNext()
+        {
+            String next = "아무 키나 눌러주세요 . . .";
+            Console.SetCursorPosition(Key.windowSizeX - next.Length * 2 + 8, Key.windowSizeY - 1);
+            Console.Write(next);
+            Common.TextClearing();
+            TextColor.ForeBlack();
+        }
+
+        public static void WriteNextScene(string next, bool color = false)
+        {
+            TextColor.BgBlack();
+            if (color) TextColor.ForeDarkGray();
+            else TextColor.ForeWhite();
+
+
+            Console.SetCursorPosition(Key.windowSizeX - next.Length * 2 + 8, Key.lastLine++);
+            Console.Write(next);
+            TextColor.ForeBlack();
+        }
+
         public static void Exit()
         {
             TextColor.ForeWhite();
