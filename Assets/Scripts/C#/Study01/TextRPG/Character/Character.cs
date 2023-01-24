@@ -9,6 +9,7 @@ namespace TextRPG.Character
 {
     abstract class Character : ICharacter
     {
+        private ConsoleColor color;
         private string name;
         private string gender;
         private int combatPower = 0;
@@ -35,6 +36,11 @@ namespace TextRPG.Character
         {
             get => this.gender;
             set { this.gender = value; }
+        }
+        public ConsoleColor Color
+        {
+            get => this.color;
+            set { this.color = value; }
         }
         public int CombatPower
         {
@@ -110,6 +116,7 @@ namespace TextRPG.Character
 
         public void WriteLine(string str, bool anim = true)
         {
+            TextColor.ForeWhite();
             Console.SetCursorPosition(2, Key.lastLine);
             foreach (char ch in str)
             {
@@ -117,9 +124,11 @@ namespace TextRPG.Character
                 if (anim) Thread.Sleep(50);
             }
             Key.lastLine+=2;
+            TextColor.ResetColor();
         }
         public void WriteLines(string[] introStr, bool anim = true)
         {
+            TextColor.ForeWhite();
             Console.SetCursorPosition(2, Key.lastLine);
             foreach (string intro in introStr)
             {
@@ -138,6 +147,7 @@ namespace TextRPG.Character
                 Console.SetCursorPosition(2, ++Key.lastLine);
             }
             Key.lastLine++;
+            TextColor.ResetColor();
         }
 
 
@@ -157,7 +167,7 @@ namespace TextRPG.Character
         public void WriteCharacterName()
         {
             Key.lastLine++;
-            TextColor.BgDarkCyan();
+            TextColor.SetBackground(this.Color);
             TextColor.ForeWhite();
             WriteLine($" 《 {this.Name} 》 ", false);
             TextColor.BgBlack();
