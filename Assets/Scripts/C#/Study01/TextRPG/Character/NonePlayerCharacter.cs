@@ -8,9 +8,11 @@ namespace TextRPG.Character
 {
     class NonePlayerCharacter : Character
     {
-        public NonePlayerCharacter(string name)
+        public NonePlayerCharacter(string name, string gender, ConsoleColor color)
         {
+            this.Color = color;
             this.Name = name;
+            this.Gender = gender;
         }
     }
 }

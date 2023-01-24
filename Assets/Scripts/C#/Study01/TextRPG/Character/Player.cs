@@ -12,16 +12,17 @@ namespace TextRPG.Character
         private static Player instance = null;
         public static Player GetInstance()
         {
-            if (instance == null) return new Player("당신");
+            if (instance == null) return new Player("당신", "미정", ConsoleColor.DarkMagenta);
             return instance;
         }
 
 
-        private Player(string name)
+        public Player(string name, string gender, ConsoleColor color)
         {
+            this.Color = color;
             this.Name = name;
+            this.Gender = gender;
         }
-
         private Weapon weapon = new Weapon("나무 몽둥이", 3, 21);
         public Weapon Weapon { get; set; }
 

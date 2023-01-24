@@ -11,12 +11,7 @@ namespace TextRPG
         public static int lastLine = 0;
         public static string mapNameUITop = "┏────────────────────────────┓";
         public static string mapNameUIBot = "┣────────────────────────────┻──────────────────────────────────────────────┓";
-        public static string[] naoIntro =
-        {
-            "땅을 딛는 느낌에 눈을 뜨자, 켈트 매듭 문양이 새겨진 새하얀 바닥과 그 위에 서있는 소녀가 보인다.",
-            "문양이 있는 검은색의 드레스를 입은 아름다운 소녀. 바다를 연상시키는 파란 눈동자는 빨려들어갈 것 같은 신비함이 느껴진다.",
-            "맑고 깨끗한 피부와 마치 인형 같이 예쁜 몸매는 어딘지 현실의 사람이 아닌 것 같은 위화감이 있다."
-        };
+
 
 
         public static bool game = true;

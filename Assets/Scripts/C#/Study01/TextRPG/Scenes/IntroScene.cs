@@ -18,7 +18,7 @@ namespace TextRPG.Scenes
                 Console.Clear();
 
                 SayFadeStart(s);
-                WriteNext();
+                Common.WriteNext();
 
                 Common.ClearInputBuffer();
 
@@ -51,16 +51,6 @@ namespace TextRPG.Scenes
             TextColor.SetAnimationColorBlack(Key.color[i]);
             Console.SetCursorPosition(Key.windowSizeX / 2 - s.Length, Key.windowSizeY / 2);
             Console.Write(s);
-        }
-
-
-        static void WriteNext()
-        {
-            String next = "아무 키나 눌러주세요 . . .";
-            Console.SetCursorPosition(Key.windowSizeX - next.Length * 2 + 8, Key.windowSizeY - 1);
-            Console.Write(next);
-            Common.TextClearing();
-            TextColor.ForeBlack();
         }
 
     }
