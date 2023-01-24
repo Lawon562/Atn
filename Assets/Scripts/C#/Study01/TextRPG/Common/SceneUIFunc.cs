@@ -36,8 +36,10 @@ namespace TextRPG
 
         public static void WriteUI(string mapName, string[] intro, bool anim = false)
         {
+            TextColor.ForeWhite();
+
             Console.Clear();
-            Key.lastLine = GetLines(Key.naoIntro);
+            Key.lastLine = GetLines(intro);
             /* UI Frame 생성(type에 따라 애니메이션 이용) */
             if (anim) WriteUIFrame();
             else WriteUIFrameAnimation();
