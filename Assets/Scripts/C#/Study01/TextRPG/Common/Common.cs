@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG.Character;
 
 namespace TextRPG
 {
@@ -43,6 +44,17 @@ namespace TextRPG
             Key.lastLine++;
             TextColor.ForeDarkGray();
             SceneLineFunc.WriteLine(str);
+            TextColor.ForeWhite();
+            Key.lastLine++;
+            TextColor.ResetColor();
+        }
+
+        public static void narration(string[] str)
+        {
+            Common.ClearInputBuffer();
+            Key.lastLine++;
+            TextColor.ForeDarkGray();
+            SceneLineFunc.WriteLines(str);
             TextColor.ForeWhite();
             Key.lastLine++;
             TextColor.ResetColor();
@@ -115,6 +127,29 @@ namespace TextRPG
             Console.SetCursorPosition(Key.windowSizeX - next.Length * 2 + 8, Key.lastLine++);
             Console.Write(next);
             TextColor.ForeBlack();
+        }
+
+        public static void Battle(string monsterName)
+        {
+            Player player = Player.GetInstance();
+            Monster monster = new Monster(monsterName);
+
+            Common.narration($"{monster.Name}과 전투를 시작했다!");
+
+            while (player.Life > 0 && monster.Life > 0)
+            {
+                player.WriteLine("플레이어는 무엇을 할까?");
+                string playerSelect = Common.getBtnStr(new[] { "일반 공격" });
+
+                if (playerSelect.Equals("일반 공격")) player.Attack(monster);
+                player.WriteLine($"{player.Name}의 공격으로 {monster.Name}의 Hp는 {monster.Life}가 되었다.");
+                if (monster.Life <= 0) break;
+                monster.Attack(player);
+                player.WriteLine($"{monster.Name}의 공격으로 {player.Name}의 Hp는 {player.Life}가 되었다.");
+            }
+
+            Common.narration("전투가 종료되었다.");
+
         }
 
         public static void Exit()
