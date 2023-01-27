@@ -16,7 +16,7 @@ namespace TextRPG.Character
         private int maxLife     = 1;
         private int maxMana     = 1;
         private int maxStamina  = 1;
-        private int life        = 1;
+        private int life        = 10;
         private int mana        = 1;
         private int stamina     = 1;
         private int str         = 1;
@@ -118,9 +118,16 @@ namespace TextRPG.Character
         {
             TextColor.ForeWhite();
             Console.SetCursorPosition(2, Key.lastLine);
+            int lineCount = 0;
             foreach (char ch in str)
             {
                 Console.Write(ch);
+                lineCount += (ch == ' ') ? 1 : 2;
+                if (lineCount > Key.mapNameUIBot.Length - 2)
+                {
+                    lineCount = 0;
+                    Console.SetCursorPosition(2, ++Key.lastLine);
+                }
                 if (anim) Thread.Sleep(50);
             }
             Key.lastLine+=2;
