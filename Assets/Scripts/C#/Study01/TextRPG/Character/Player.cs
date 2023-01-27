@@ -22,6 +22,16 @@ namespace TextRPG.Character
             this.Color = color;
             this.Name = name;
             this.Gender = gender;
+            this.Life = 60;
+            this.Mana = 31;
+            this.Stamina = 37;
+            this.Str = 12;
+            this.Intellect = 17;
+            this.Dex = 7;
+            this.Will = 11;
+            this.Luck = 5;
+            this.DefPoint = 3;
+            this.DefPercent = 1;
         }
         private Weapon weapon = new Weapon("나무 몽둥이", 3, 21);
         public Weapon Weapon { get; set; }
@@ -30,9 +40,10 @@ namespace TextRPG.Character
 
         public void Attack(Monster Target)
         {
-            int point;
+            int point = 0;
             try
             {
+                
                 point = (this.Str +  this.weapon.WeaponDamage() - Target.DefPoint) / Target.DefPercent;
             }
             catch (DivideByZeroException e)
@@ -41,13 +52,16 @@ namespace TextRPG.Character
             }
             catch (Exception e)
             {
-                // To-do Somthing
+                point = (this.Str - Target.DefPoint) / Target.DefPercent;
             }
             finally
             {
-                point = 1;
+                //point = 1;
             }
-            Target.Life -= (point > 0) ? point : 1;
+            //Target.Life -= (point > 0) ? point : 1;
+            Target.Life -= point;
+            if (Target.Life < 0) Target.Life = 0;
+
         }
 
         public int PotionAmountCalc(int max, int current, int amount)
